@@ -31,15 +31,14 @@
             "text": "options - The options for the password."
           },
           {
-            "name": "returns",
-            "text": "Success status"
+            "name": "returns"
           },
           {
             "name": "example",
             "text": "await SavePassword.promptDialog({\n  username: 'your-username',\n  password: 'your-password'\n});"
           }
         ],
-        "docs": "Save a password to the keychain.",
+        "docs": "Save a password to the keychain.\n\nOn iOS 26.2 and later, resolving means the system accepted the request —\nnot that the credential was stored. The save prompt belongs to the system\nand the user's choice is not reported back, so do not treat a resolved\npromise as confirmation. Below 26.2, and on Android, dismissing the prompt\nrejects.",
         "complexTypes": [
           "Options"
         ],
