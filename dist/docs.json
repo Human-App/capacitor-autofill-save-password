@@ -1,0 +1,161 @@
+{
+  "api": {
+    "name": "SavePasswordPlugin",
+    "slug": "savepasswordplugin",
+    "docs": "",
+    "tags": [
+      {
+        "text": "SavePasswordPlugin",
+        "name": "interface"
+      },
+      {
+        "text": "Capacitor plugin for saving passwords to the keychain.",
+        "name": "description"
+      }
+    ],
+    "methods": [
+      {
+        "name": "promptDialog",
+        "signature": "(options: Options) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- The options for the password.",
+            "type": "Options"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - The options for the password."
+          },
+          {
+            "name": "returns",
+            "text": "Success status"
+          },
+          {
+            "name": "example",
+            "text": "await SavePassword.promptDialog({\n  username: 'your-username',\n  password: 'your-password'\n});"
+          }
+        ],
+        "docs": "Save a password to the keychain.",
+        "complexTypes": [
+          "Options"
+        ],
+        "slug": "promptdialog"
+      },
+      {
+        "name": "readPassword",
+        "signature": "() => Promise<ReadPasswordResult>",
+        "parameters": [],
+        "returns": "Promise<ReadPasswordResult>",
+        "tags": [
+          {
+            "name": "returns",
+            "text": "The retrieved password credentials"
+          }
+        ],
+        "docs": "Read a password from the keychain. Requires the developer to setup associated domain for the app for iOS.",
+        "complexTypes": [
+          "ReadPasswordResult"
+        ],
+        "slug": "readpassword"
+      },
+      {
+        "name": "getPluginVersion",
+        "signature": "() => Promise<{ version: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ version: string; }>",
+        "tags": [
+          {
+            "name": "returns",
+            "text": "Promise that resolves with the plugin version"
+          },
+          {
+            "name": "since",
+            "text": "1.0.0"
+          }
+        ],
+        "docs": "Get the native Capacitor plugin version.",
+        "complexTypes": [],
+        "slug": "getpluginversion"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "Options",
+      "slug": "options",
+      "docs": "",
+      "tags": [
+        {
+          "text": "Options",
+          "name": "interface"
+        },
+        {
+          "text": "The options for the prompt.",
+          "name": "description"
+        }
+      ],
+      "methods": [],
+      "properties": [
+        {
+          "name": "username",
+          "tags": [],
+          "docs": "The username to save.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "tags": [],
+          "docs": "The password to save.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "tags": [],
+          "docs": "The url to save the password for. (For example: \"console.capgo.app\")\niOS only.",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "title",
+          "tags": [],
+          "docs": "The name the credential is filed under in the password manager.\n(For example: \"Capgo\"). Defaults to the domain from `url`.\niOS 26.2 and later only.",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ReadPasswordResult",
+      "slug": "readpasswordresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "username",
+          "tags": [],
+          "docs": "The username of the password.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "tags": [],
+          "docs": "The password of the password.",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
